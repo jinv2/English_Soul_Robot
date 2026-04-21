@@ -1,8 +1,11 @@
 /*
   SHENSIST MATRIX · English Soul Robot V5
   Copyright (c) 2026 Shensist Matrix. All rights reserved.
-  PROPRIETARY & CONFIDENTIAL - LATT-5.0 PROTOCOL
 */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --crayon-red: #ff4d4d;
   --crayon-orange: #ffa500;
@@ -378,16 +381,22 @@ body {
   body {
     height: auto;
     min-height: 100dvh;
-    overflow-y: auto; /* Allow body scroll on mobile */
-    display: block; /* Stack everything vertically */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .drawing-frame {
-    width: 100vw;
-    padding: 10px;
+    width: 100%; /* Fill available width safely */
+    max-width: 100vw;
+    padding: 15px;
     border-width: 5px;
     height: auto;
     min-height: 100dvh;
+    margin: 0;
   }
 
   .drawing-panel {
@@ -398,12 +407,16 @@ body {
   }
 
   .robot-title {
-    font-size: 2.5rem;
-    gap: 8px;
+    font-size: 1.8rem; /* Further reduced from 2.5rem to prevent offset */
+    gap: 5px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping if needed */
   }
 
   .robot-tagline {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   .robot-canvas {
