@@ -310,58 +310,49 @@
         userInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') connectBtn.click();
         });
+
+        // 4. Mobile "Movement" Interaction: Tilt & Touch Parallax
+        const frame = document.getElementById('main-frame');
+        const robotCanvas = document.querySelector('.robot-canvas');
+        const decoElements = document.querySelectorAll('.deco');
+
+        function applyParallax(x, y) {
+            const moveX = (x - window.innerWidth / 2) / 20;
+            const moveY = (y - window.innerHeight / 2) / 20;
+            
+            if (robotCanvas) {
+                robotCanvas.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+            
+            decoElements.forEach((deco, index) => {
+                const depth = (index % 3 + 1) * 10;
+                deco.style.transform = `translate(${moveX / depth}px, ${moveY / depth}px)`;
+            });
+        }
+
+        // Mouse Move for Desktop
+        window.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) applyParallax(e.clientX, e.clientY);
+        });
+
+        // Touch Move for Mobile
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                applyParallax(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        // Tilt effect for Mobile (Gyroscope)
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', (e) => {
+                if (e.beta !== null && e.gamma !== null) {
+                    const x = (e.gamma + 30) * (window.innerWidth / 60);
+                    const y = (e.beta - 30) * (window.innerHeight / 60);
+                    applyParallax(x, y);
+                }
+            }, true);
+        }
     </script>
     
-    <!-- 终极“焊接”脚本：强行接通灵魂 -->
-    <script>
-    (function() {
-        const instinctBrain = {
-            "robot": "宇宙协议：找两个瓶盖，给我做一个信号接收器！",
-            "apple": "创意任务：用红色的笔画一个带有电线的大苹果核心！",
-            "star": "星际指令：折一个纸飞机，它是我的助推器！",
-            "default": "正在连接外太空模型... 请先尝试输入 robot, apple 或 star！"
-        };
-
-        const connectBtn = document.getElementById('connect-btn');
-        const inputField = document.getElementById('input-word');
-        const outputArea = document.querySelector('.output-area');
-        const eyeLeft = document.getElementById('eye-left');
-        const eyeRight = document.getElementById('eye-right');
-
-        if (connectBtn) {
-            connectBtn.onclick = function() {
-                // 1. 播放点击反馈 (Web Audio API)
-                try {
-                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    osc.connect(gain); gain.connect(ctx.destination);
-                    osc.frequency.value = 880; gain.gain.setValueAtTime(0.1, ctx.currentTime);
-                    osc.start(); osc.stop(ctx.currentTime + 0.1);
-                } catch(e) {}
-
-                // 2. 立即显示结果 (本能脑)
-                const input = inputField ? inputField.value.toLowerCase().trim() : "";
-                const result = instinctBrain[input] || instinctBrain["default"];
-                if (outputArea) {
-                    outputArea.innerText = result;
-                    outputArea.style.opacity = "1";
-                }
-                
-                // 3. 机器人眼睛亮起动画
-                [eyeLeft, eyeRight].forEach(eye => {
-                    if (eye) {
-                        eye.style.filter = 'drop-shadow(0 0 15px #ff0)';
-                        eye.style.fill = '#ff0';
-                        setTimeout(() => {
-                            eye.style.filter = '';
-                            eye.style.fill = '#fcd34d'; // 原本的 var(--crayon-yellow)
-                        }, 1000);
-                    }
-                });
-            };
-        }
-    })();
-    </script>
 </body>
 </html>

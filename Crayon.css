@@ -37,11 +37,12 @@ body {
   background: var(--bg-charcoal);
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* Desktop remains fixed */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-hand);
+  -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
 }
 
 .drawing-frame {
@@ -373,19 +374,27 @@ body {
 }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
 
-/* Mobile Adaptation */
 @media (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100dvh;
+    overflow-y: auto; /* Allow body scroll on mobile */
+    display: block; /* Stack everything vertically */
+  }
+
   .drawing-frame {
     width: 100vw;
     padding: 10px;
     border-width: 5px;
+    height: auto;
+    min-height: 100dvh;
   }
 
   .drawing-panel {
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    padding-top: 100px; /* Space for title */
+    overflow-y: visible; /* Let body handle scroll */
+    padding-top: 80px; /* Space for title */
   }
 
   .robot-title {
