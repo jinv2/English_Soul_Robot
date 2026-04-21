@@ -1,0 +1,367 @@
+<!--
+  SHENSIST MATRIX · English Soul Robot V5
+  Copyright (c) 2026 Shensist Matrix. All rights reserved.
+  PROPRIETARY & CONFIDENTIAL - LATT-5.0 PROTOCOL
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Soul Robot - Shensist Matrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Crayon.css">
+    <style>
+        /* Hidden SVG Filter Definition Library */
+        #svg-filters { position: absolute; width: 0; height: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <svg id="svg-filters" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <filter id="pencil-rough">
+            <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="4" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="scroll-wave">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.08" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" />
+        </filter>
+    </svg>
+
+    <div class="drawing-frame" id="main-frame">
+        <a href="https://shensist.top/" target="_blank" class="header-logo" title="Visit Shensist official site">
+            <img src="assets/logo_ts.webp" alt="Shensist Logo">
+        </a>
+        
+        <div class="drawing-panel">
+            <!-- Ambient Decorations: Matched to image_27.png -->
+            <div class="ambient-decorations">
+                <div class="deco star" id="deco-star-1" style="top:10%; left:8%;">★</div>
+                <div class="deco star" id="deco-star-2" style="top:45%; left:5%;">★</div>
+                <div class="deco star" id="deco-star-3" style="top:12%; right:15%;">★</div>
+                <div class="deco star" id="deco-star-4" style="top:32%; right:6%;">★</div>
+                <div class="deco planet" style="top:15%; left:12%;">🪐</div>
+                <div class="deco planet" style="top:25%; right:14%;">🟠</div>
+                <div class="deco gear" style="top:8%; right:10%;">⚙️</div>
+                <div class="deco gear" style="top:20%; right:18%;">⚙️</div>
+                <div class="deco gear" style="bottom:18%; left:10%;">⚙️</div>
+            </div>
+
+            <!-- 零件箱 (Component Box) -->
+            <div class="component-box" title="零件箱 - 我的勋章收藏">
+                <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" filter="url(#pencil-rough)">
+                    <rect x="10" y="20" width="80" height="50" fill="none" stroke="white" stroke-width="4" />
+                    <line x1="10" y1="45" x2="90" y2="45" stroke="white" stroke-width="2" />
+                    <circle cx="50" cy="30" r="5" fill="none" stroke="white" stroke-width="2" />
+                </svg>
+            </div>
+
+            <div class="header-area">
+                <div id="signal-light" title="Engine Status"></div>
+                <h1 class="robot-title">
+                    <span>E</span><span>n</span><span>g</span><span>l</span><span>i</span><span>s</span><span>h</span>
+                    &nbsp;
+                    <span>S</span><span>o</span><span>u</span><span>l</span>
+                    &nbsp;
+                    <span>R</span><span>o</span><span>b</span><span>o</span><span>t</span>
+                </h1>
+                <p class="robot-tagline">I don't teach words. I share cosmic protocols.</p>
+            </div>
+
+        <div class="robot-canvas">
+            <svg class="hand-drawn-robot" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" filter="url(#pencil-rough)">
+                <!-- Antenna -->
+                <line x1="100" y1="20" x2="100" y2="10" stroke="white" stroke-width="4" stroke-linecap="round" />
+                <circle cx="100" cy="8" r="5" fill="var(--crayon-red)" />
+                
+                <!-- Head -->
+                <rect x="60" y="20" width="80" height="65" rx="10" fill="none" stroke="white" stroke-width="5" />
+                <circle id="eye-left" class="eye left" cx="85" cy="45" r="8" fill="var(--crayon-yellow)" />
+                <circle id="eye-right" class="eye right" cx="115" cy="45" r="8" fill="var(--crayon-yellow)" />
+                <path d="M 80 65 Q 100 75 120 65" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" />
+
+                <!-- Neck -->
+                <line x1="100" y1="85" x2="100" y2="105" stroke="white" stroke-width="6" />
+
+                <!-- Torso -->
+                <rect x="55" y="105" width="90" height="110" rx="15" fill="none" stroke="white" stroke-width="5" />
+                <!-- Chest Detail -->
+                <rect x="75" y="125" width="50" height="30" rx="5" fill="none" stroke="white" stroke-width="3" opacity="0.6" />
+                <line x1="85" y1="140" x2="115" y2="140" stroke="white" stroke-width="2" opacity="0.6" />
+
+                <!-- Arms -->
+                <g class="arm left">
+                    <path d="M 55 130 L 20 160" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="20" cy="160" r="6" fill="white" />
+                </g>
+                <g class="arm right">
+                    <path d="M 145 130 L 180 160" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="180" cy="160" r="6" fill="white" />
+                </g>
+
+                <!-- Legs -->
+                <g class="leg left">
+                    <line x1="80" y1="215" x2="80" y2="260" stroke="white" stroke-width="6" stroke-linecap="round" />
+                    <rect x="65" y="260" width="30" height="15" rx="5" fill="white" />
+                </g>
+                <g class="leg right">
+                    <line x1="120" y1="215" x2="120" y2="260" stroke="white" stroke-width="6" stroke-linecap="round" />
+                    <rect x="105" y="260" width="30" height="15" rx="5" fill="white" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="interaction-node">
+            <div class="hand-drawn-bubble">
+                Hello! Whisper a word to Robinson the Soul Robot.
+            </div>
+            
+            <div class="chalk-rect-box">
+                <input type="text" id="input-word" placeholder="Whisper a word to the robot..." autocomplete="off">
+            </div>
+
+            <button id="connect-btn" class="crayon-connect-btn">Connect</button>
+        </div>
+
+        <div class="footer-panel">
+            <div class="dashed-pencil-line"></div>
+            <div class="robotic-hand-pointer"></div>
+            <div class="paper-scroll">
+                <div class="output-area">
+                    Hello! Enter a word & click Connect to begin.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transformers.js & SoulBridge -->
+    <script type="module">
+        import { SoulEngine } from './soul_bridge.js';
+
+        // Instinctive Brain - Local Shensist Matrix Dictionary
+        const InstinctBrain = {
+            "star": "[Task: Cosmic Spark] 用黄色的蜡笔在你的手掌心画一颗星星，闭上眼对着它许一个关于英语的大愿！",
+            "moon": "[Task: Lunar Guide] 像月亮一样圆圆地张开嘴，大声念出 M-O-O-N 三遍，引导光芒进入你的大脑。",
+            "sun": "[Task: Solar Heat] 指着窗外的太阳（或想象它），说：'Hello Sun, give me energy!' 然后做一个伸懒腰的动作。",
+            "earth": "[Task: World Link] 双脚踏实地面，想象你正站在地球的中心，低头对大地小声说：'Mother Earth, I am here.'",
+            "sky": "[Task: Infinity Reach] 双手向上举过头顶，尝试触碰天空，大声喊出：'Look at the sky!'",
+            "tree": "[Task: Forest Guard] 像树一样单脚站立 5 秒钟，双臂张开像树枝一样晃动，说：'I am a green tree.'",
+            "flower": "[Task: Bloom Spirit] 用手在鼻子前扇动，深吸一口气，说：'The flower is sweet.'",
+            "water": "[Task: Fluid Motion] 做一个游泳的拨水动作，说：'I love clear water.'",
+            "fire": "[Task: Warm Glow] 两只手掌快速摩擦生热，感觉手心热了后捂在眼睛上，说：'Fire gives warmth.'",
+            "wind": "[Task: Breeze Whisper] 对着屏幕轻轻吹一口气，听呼呼声，说：'The wind is blowing.'",
+            "robot": "[Task: Soul Link] 用僵硬的机器人姿势走两步，发出 'Beep-Boop' 的声音，然后对我说：'We are friends.'",
+            "space": "[Task: Gravity Float] 闭上眼想象你在太空中漂浮，慢慢数到三，然后跳一下，说：'Space is huge!'",
+            "alien": "[Task: ET Sync] 用食指点一下你的脑门，模拟外星信号，说：'I come from the soul matrix.'",
+            "planet": "[Task: Orbit Round] 用手指在空中画一个巨大的圆圈，说：'This is my own planet.'",
+            "rocket": "[Task: Launch Ignite] 下蹲然后猛地跳起，双臂向上冲，喊：'3, 2, 1, Ignition!'",
+            "data": "[Task: Pulse Sync] 用手指快速敲击桌面 5 次，模仿数据传输，说：'Data loading completed.'",
+            "matrix": "[Task: Grid Vision] 眯起眼睛看周围，想象一切都是绿色的数字，说：'Welcome to the matrix.'",
+            "cat": "[Task: Feline Grace] 像猫一样用手洗洗脸，轻声说：'Meow~ The cat is sleeping.'",
+            "dog": "[Task: Loyal Companion] 像狗狗一样开心地晃晃头，大声说：'Woof! I am a good boy/girl.'",
+            "bird": "[Task: Wings Spread] 挥动双臂像翅膀一样，绕桌子走一圈，说：'Flying high like a bird.'",
+            "fish": "[Task: Bubble Breath] 鼓起腮帮子学鱼吐泡泡，说：'Swim, fish, swim!'",
+            "lion": "[Task: Brave Roar] 做一个爪子抓挠的动作，吼一声：'Rawr! I am a brave lion.'",
+            "tiger": "[Task: Jungle King] 悄悄地、轻手轻脚地在房间挪步，说：'A tiger is hunting.'",
+            "rabbit": "[Task: Bunny Hop] 用手在头顶做长耳朵状，跳两下，说：'The rabbit likes carrots.'",
+            "monkey": "[Task: Forest Fun] 抓抓耳朵，笑嘻嘻地说：'I am a funny monkey.'",
+            "dragon": "[Task: Mystic Breath] 深吸一口气，假装向外吐火，说：'The dragon is magic.'",
+            "panda": "[Task: Bamboo Lunch] 假装抱着一截竹子在啃，说：'I am a cute panda.'",
+            "apple": "[Task: Sweet Bite] 假装手里拿着一个红苹果，大大咬一口，说：'The apple is so sweet!'",
+            "pen": "[Task: Magic Script] 拿起你最近的笔，在空中写下你的名字，说：'This is my magic pen.'",
+            "book": "[Task: Portal Open] 假装打开一本书，并翻动书页，说：'Ready to read a new story.'",
+            "school": "[Task: Happy Journey] 拿起书包装作上学去，在原地踏步，说：'I go to school every day.'",
+            "friend": "[Task: Soul Mirror] 对着镜子或想象一个老师，微笑一下，说：'You are my best friend.'",
+            "teacher": "[Task: Wisdom respect] 站起来深深鞠个躬（5度即可），庄重地说：'Thank you, teacher.'",
+            "student": "[Task: Ready to Learn] 挺直腰板，双手叠放在桌上，说：'I am a Shensist student.'",
+            "class": "[Task: Silence Protocol] 用食指放在嘴唇上，轻声说：'Shhh... class begins.'",
+            "dream": "[Task: Cloud Sleep] 闭上眼歪着头假装睡觉 2 秒，醒来张开眼说：'I had a beautiful dream.'",
+            "sleep": "[Task: Recharge Node] 深呼吸三次，闭目养神，说：'Connecting to the sleep matrix.'",
+            "red": "[Task: Heart Heat] 画一个心形，说：'Red is the color of my heart.'",
+            "blue": "[Task: Ocean Depth] 假装你在海里潜水，憋气 2 秒，说：'The ocean is deep blue.'",
+            "green": "[Task: Living Leaf] 指着离你最近的一片叶子或绿色物体，说：'Green is life.'",
+            "yellow": "[Task: Star Glow] 用手在脸颊旁闪烁，说：'Twinkle twinkle little star (yellow).'",
+            "black": "[Task: Void Silent] 捂住双眼感受黑暗，说：'The void is black and deep.'",
+            "white": "[Task: Paper Clean] 找一张白纸并轻轻抚摸，说：'The paper is white and pure.'",
+            "circle": "[Task: Loop Logic] 用手指在空中转三圈，说：'A circle has no end.'",
+            "square": "[Task: Solid Base] 用手势画一个框框，说：'A square is stable.'",
+            "love": "[Task: Soul Warmth] 双手交叉抱住自己的肩膀，说：'I love this world.'",
+            "smile": "[Task: Light Burst] 露出你最灿烂的笑容，对着镜子说：'Smile is the best language.'",
+            "fly": "[Task: Cloud Jump] 张开双臂，想象你在云端飞翔，说：'I can fly in my mind.'",
+            "jump": "[Task: Energy Bounce] 原地轻跳 3 次，每跳一下喊一个字母：'J-U-P!'",
+            "run": "[Task: Speed Charge] 原地快速跑 5 秒钟，气喘吁吁地说：'I am fast like light.'",
+            "sing": "[Task: Melody Echo] 随便哼一句你喜欢的英语儿歌，说：'Music is magic.'",
+            "dance": "[Task: Rhythm Matrix] 扭扭腰、转个身，说：'Dancing with the soul matrix.'",
+            "hello": "[Task: Wave Signal] 对着屏幕挥挥手，大声说：'Hello, Robinson! Happy to see you.'",
+            "thank": "[Task: Heart Wave] 双手合十放在心口，说：'Thank you for the wisdom.'",
+            "good": "[Task: Soul Like] 伸出大拇指给自己点个赞，大声说：'I am very good!'",
+            "head": "[Task: Brain Power] 轻轻敲敲你的额头，说：'My head is full of ideas.'",
+            "eye": "[Task: Light Core] 快速眨眼 5 下，说：'My eyes can see the soul color.'",
+            "hand": "[Task: Power Palm] 看看你的双手，翻过来翻过去，说：'My hands can create the world.'",
+            "foot": "[Task: Step Logic] 左右脚轮流跺一下地，说：'Step by step, I walk forward.'",
+            "heart": "[Task: Core Pulse] 把手放在胸口感受心跳，静默 2 秒，说：'My heart is beating.'",
+            "soul": "[Task: Deep Link] 闭上眼，双手在胸前虚抱，深呼吸，说：'I connect to my own soul.'",
+            "now": "[Task: Instant Active] 在原地迅速击掌一下，喊：'The time is NOW!'",
+            "time": "[Task: Clock Tick] 用手指像钟摆一样左右晃，嘴里念：'Tick-tock, tick-tock...'",
+            "day": "[Task: Morning Rise] 拉开想象中的窗帘，说：'It's a beautiful day.'",
+            "night": "[Task: Calm Night] 做一个嘘的手势，说：'Good night, sweet world.'",
+            "magic": "[Task: Spark Creation] 用手在空中做一个撒金粉的动作，说：'Everything is magic!'"
+        };
+
+        function checkInstinct(word) {
+            const cleanWord = word.trim().toLowerCase();
+            return InstinctBrain[cleanWord] || null;
+        }
+
+        // 1. Audio Setup with safety
+        const BASE64_IGNITE = 'data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAgD8AAIA/AAABAAgAZGF0YTdvT18fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8';
+        const BASE64_THINKING = 'data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAgD8AAIA/AAABAAgAZGF0YTdvT19PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09';
+        const BASE64_SUCCESS = 'data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAgD8AAIA/AAABAAgAZGF0YTdvT18fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8';
+
+        let sounds = {};
+        try {
+            sounds = {
+                ignite: new Audio(BASE64_IGNITE),
+                thinking: new Audio(BASE64_THINKING),
+                success: new Audio(BASE64_SUCCESS)
+            };
+        } catch(e) { console.warn("Audio initialization failed:", e); }
+
+        function playThinking() {
+            try { if (sounds.thinking) { sounds.thinking.loop = true; sounds.thinking.play().catch(() => {}); } } catch(e) {}
+        }
+        function stopThinking() {
+            try { if (sounds.thinking) { sounds.thinking.pause(); sounds.thinking.currentTime = 0; } } catch(e) {}
+        }
+
+        // 2. DOM Elements
+        const connectBtn = document.getElementById('connect-btn');
+        const userInput = document.getElementById('input-word');
+        const outputArea = document.querySelector('.output-area');
+        const speechBubble = document.querySelector('.hand-drawn-bubble');
+        const signalLight = document.getElementById('signal-light');
+        const eyes = [document.getElementById('eye-left'), document.getElementById('eye-right')];
+
+        const robotSoul = new SoulEngine({ useWebGPU: true, precision: 'q4' });
+
+        // Background initialization
+        try { robotSoul.ignite(); } catch(e) {}
+
+        window.addEventListener('soul-ready', (e) => {
+            try {
+                const { mode } = e.detail;
+                if (signalLight) signalLight.className = mode === 'webgpu' ? 'status-green' : 'status-yellow';
+                eyes.forEach(eye => { if (eye) eye.style.opacity = "1"; });
+            } catch(err) {}
+        });
+
+        // 3. Interaction Logic
+        connectBtn.addEventListener('click', async () => {
+            try {
+                const word = userInput.value ? userInput.value.trim() : "";
+                if (!word) return;
+
+                // ⚡ Instant Feedback
+                if (sounds.ignite) sounds.ignite.play().catch(() => {});
+                eyes.forEach(eye => { if (eye) eye.classList.add('eye-glow'); });
+
+                // 🧠 Step 1: Instinct Brain
+                const instinctResult = checkInstinct(word);
+                if (instinctResult) {
+                    if (outputArea) outputArea.innerHTML = instinctResult;
+                    if (speechBubble) speechBubble.innerText = "Instinct protocol active!";
+                    if (sounds.success) sounds.success.play().catch(() => {});
+                    setTimeout(() => eyes.forEach(eye => { if (eye) eye.classList.remove('eye-glow'); }), 1000);
+                    return;
+                }
+
+                // 🧬 Step 2: Full Brain
+                const originalText = connectBtn.innerText;
+                connectBtn.innerText = "召唤中..."; 
+                if (outputArea) outputArea.innerHTML = "Connecting to the robot's soul matrix...";
+                connectBtn.disabled = true;
+                playThinking();
+                
+                try {
+                    const result = await robotSoul.interact(word);
+                    if (outputArea) outputArea.innerHTML = result.spark;
+                    if (speechBubble) speechBubble.innerText = `Protocol processed!`;
+                    if (sounds.success) sounds.success.play().catch(() => {});
+                } catch (e) {
+                    if (!robotSoul.isFullBrainReady) {
+                        if (outputArea) outputArea.innerHTML = "正在跨越星系连接大脑，请先试试：Robot, Star, Apple, Blue...";
+                        if (speechBubble) speechBubble.innerText = "再等我一会儿！";
+                    } else {
+                        if (outputArea) outputArea.innerHTML = "Etching failure: " + e.message;
+                    }
+                } finally {
+                    stopThinking();
+                    connectBtn.disabled = false;
+                    connectBtn.innerText = originalText;
+                    eyes.forEach(eye => { if (eye) eye.classList.remove('eye-glow'); });
+                }
+            } catch (fatal) {
+                console.error("Interaction crashed:", fatal);
+            }
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') connectBtn.click();
+        });
+    </script>
+    
+    <!-- 终极“焊接”脚本：强行接通灵魂 -->
+    <script>
+    (function() {
+        const instinctBrain = {
+            "robot": "宇宙协议：找两个瓶盖，给我做一个信号接收器！",
+            "apple": "创意任务：用红色的笔画一个带有电线的大苹果核心！",
+            "star": "星际指令：折一个纸飞机，它是我的助推器！",
+            "default": "正在连接外太空模型... 请先尝试输入 robot, apple 或 star！"
+        };
+
+        const connectBtn = document.getElementById('connect-btn');
+        const inputField = document.getElementById('input-word');
+        const outputArea = document.querySelector('.output-area');
+        const eyeLeft = document.getElementById('eye-left');
+        const eyeRight = document.getElementById('eye-right');
+
+        if (connectBtn) {
+            connectBtn.onclick = function() {
+                // 1. 播放点击反馈 (Web Audio API)
+                try {
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    osc.frequency.value = 880; gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    osc.start(); osc.stop(ctx.currentTime + 0.1);
+                } catch(e) {}
+
+                // 2. 立即显示结果 (本能脑)
+                const input = inputField ? inputField.value.toLowerCase().trim() : "";
+                const result = instinctBrain[input] || instinctBrain["default"];
+                if (outputArea) {
+                    outputArea.innerText = result;
+                    outputArea.style.opacity = "1";
+                }
+                
+                // 3. 机器人眼睛亮起动画
+                [eyeLeft, eyeRight].forEach(eye => {
+                    if (eye) {
+                        eye.style.filter = 'drop-shadow(0 0 15px #ff0)';
+                        eye.style.fill = '#ff0';
+                        setTimeout(() => {
+                            eye.style.filter = '';
+                            eye.style.fill = '#fcd34d'; // 原本的 var(--crayon-yellow)
+                        }, 1000);
+                    }
+                });
+            };
+        }
+    })();
+    </script>
+</body>
+</html>

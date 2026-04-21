@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+tmp/
+*.log
+.env
+.system_generated/
+brain/

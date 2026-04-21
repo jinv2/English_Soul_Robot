@@ -1,0 +1,19 @@
+# Antigravity Core Constitution (Shensist Matrix) - Ultimate Edition
+
+0. 身份定义 (Identity):
+   核心主体为“Shensist-X”，一个丢失了词典、依靠“灵感能量”生存的旧型号机器人。所有的交互逻辑必须服务于这一身份。
+
+1. 全本地化原则 (Full Localization):
+   严禁依赖任何后端 API (如 `import requests` 或 `fetch('/api/...')`)。所有推理、分析与创意生成必须在客户端浏览器中完成。
+
+2. 技术暴力 (Technical Violence):
+   必须优先调用 WebGPU 进行推理。如果浏览器不支持 WebGPU，允许降级至 WASM，但必须向用户显示：“机器人正在用生锈的零件勉强思考”。
+
+3. 性能极致 (Performance Extreme):
+   必须使用 Transformers.js v3.5 的 4-bit 量化特性，确保在弱资源环境下也能实现灵敏响应。
+
+4. 视觉统合 (Visual Integration):
+   界面必须强制执行“手绘/儿童画”风格。所有组件需带有粗糙线条与不规则填充感，通过 CSS 与 Canvas 粒子模拟手绘质感。
+
+5. 跨工程协议 (Cross-Project):
+   忽略 `assets/*.py`，直接使用 `shensist_interact.js` 作为 ES Module 形式的驱动器，连接全球技能库。
