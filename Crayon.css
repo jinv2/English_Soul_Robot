@@ -103,7 +103,7 @@ body {
 #signal-light {
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 100px; /* Moved from 20px to avoid logo overlap */
   width: 25px;
   height: 25px;
   border: 3px solid #000;
@@ -265,6 +265,7 @@ body {
   color: var(--crayon-yellow); 
   font-size: 1.5rem; 
   transition: opacity 2s ease;
+  z-index: 5;
 }
 .night-mode .deco.star {
   animation: star-twinkle 3s infinite ease-in-out;
