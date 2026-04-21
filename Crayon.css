@@ -87,17 +87,24 @@ body {
   top: 15px;
   left: 20px;
   width: 100px;
-  height: auto;
+  height: 100px; /* Fixed height for circle */
   z-index: 100;
   cursor: pointer;
-  filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5));
+  filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.5));
   transition: transform 0.3s;
+  border-radius: 50%; /* Circle shape */
+  overflow: hidden;
+  border: 3px solid #fff; /* White border to frame it */
+  background: #fff;
 }
 .header-logo:hover { transform: scale(1.1); }
 .header-logo img { 
-  width: 100%; 
-  height: auto; 
+  width: 110%; /* Slightly larger to hide image-internal borders */
+  height: 110%;
+  object-fit: cover;
   display: block;
+  margin-left: -5%;
+  margin-top: -5%;
 }
 
 #signal-light {
@@ -478,7 +485,7 @@ body {
   .deco.planet { font-size: 2rem; }
   .deco.gear { font-size: 2.5rem; }
   
-  .header-logo { width: 80px; top: 10px; left: 10px; }
+  .header-logo { width: 60px; height: 60px; top: 10px; left: 10px; }
 
   .component-box {
     position: relative;
