@@ -92,7 +92,6 @@ body {
   cursor: pointer;
   filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5));
   transition: transform 0.3s;
-  mix-blend-mode: screen; /* Blend away white background if it's a dark logo on white, or use multiply if it's black logo on white */
 }
 .header-logo:hover { transform: scale(1.1); }
 .header-logo img { 
@@ -403,7 +402,14 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-y: visible; /* Let body handle scroll */
-    padding-top: 80px; /* Space for title */
+    padding-top: 20px; /* Reduced from 80px */
+  }
+
+  .header-area {
+    padding-left: 0; /* Remove the 140px desktop padding */
+    text-align: center;
+    width: 100%;
+    margin-top: 60px; /* Space for the absolute logo above */
   }
 
   .robot-title {
